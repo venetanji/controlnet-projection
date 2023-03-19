@@ -2,9 +2,14 @@ from PIL import Image
 import numpy as np
 import cv2
 
+cap = cv2.VideoCapture(0)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+ret, img = cap.read()
+#display frame in window
+cv2.imshow("frame", img)
+cv2.waitKey(0)
 
-
-img = Image.open("frame.jpg")
+#img = Image.open("frame.jpg")
 img = np.array(img)
 print(img.shape)
 
